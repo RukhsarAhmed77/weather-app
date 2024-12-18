@@ -1,5 +1,6 @@
-/* General body styling */
 body {
+    background-image: url('bg.jpg');
+    background-size: cover;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,37 +9,27 @@ body {
     justify-content: center;
     min-height: 100vh;
 }
-
-#bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-
 .container {
     text-align: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 100%;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
 }
 
 h1 {
     margin-bottom: 20px;
-    color: #7e3f98;
+    color: #FF6F61;
     font-size: 2.5em;
     font-weight: bold;
 }
 
 .input-group {
     margin-bottom: 20px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,30 +37,30 @@ h1 {
 
 input[type="text"] {
     padding: 12px;
-    border: 1px solid #ccc;
+    border: #ccc;
     border-radius: 10px;
-    width: calc(100% - 90px);
+    flex-grow: 1;
     font-size: 1em;
+    outline: none;
 }
 
 button {
     padding: 8px 20px;
     margin-left: 10px;
     border: none;
-    background-color: #468ebc93;
-    backdrop-filter: blur(20px);
+    background-color: #FF9A8B;;
     font-weight: 800;
     border-radius: 10px;
     cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s ease;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #468ebc;
+    background-color: #ff8349;
+    transition: 0.3s;
 }
 
-/* Weather card styles */
 .weather-card h1.temp {
     color: #e63946;
     font-size: 3em;
@@ -82,6 +73,10 @@ button:hover {
     height: 120px;
 }
 
+.weather-card{
+    margin-bottom: 10px;
+}
+
 .weather-card p {
     margin: 5px 0;
     font-size: 1.1em;
@@ -89,14 +84,25 @@ button:hover {
 }
 
 /* Responsive styles */
+
+@media (max-width: 768px) {
+    .container{
+        margin: 10px;
+    }
+}
+
+
+
+
 @media (max-width: 480px) {
     .container {
-        background-color: rgba(255, 255, 255, 0.612);
-        min-height: 100vh;
-        backdrop-filter: blur(0);
+        margin: 10px;
         padding: 0;
-        border-radius: 0;
+        border-radius: 5;
         box-shadow: 0 0 10px rgb(0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     .input-group{
         flex-direction: column;
@@ -105,6 +111,8 @@ button:hover {
     }
     h1 {
         font-size: 1.5em;
+        padding-top: 10px;
+        margin: 2px;
     }
 
     input[type="text"], button {
